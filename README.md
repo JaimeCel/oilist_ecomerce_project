@@ -125,4 +125,4 @@ Strong acquisition, low retention, solid delivery, healthy satisfaction. The pla
 3. Run `data_quality.sql` to check for nulls and inconsistencies
 4. Run `analysis.sql`
 5. Update the `.env` file with your database credentials (see `.env`)
-6. Run `visualization.py` to generate the plots
+6. Run `visualization_script.py` to generate the plots
