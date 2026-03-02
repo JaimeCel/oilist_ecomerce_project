@@ -27,7 +27,7 @@ customer_repeat= pd.read_sql("SELECT * FROM customer_repeat", engine)
 product_orders = pd.read_sql("SELECT * FROM product_orders",  engine)
 product_revenue= pd.read_sql("SELECT * FROM product_revenue", engine)
 reviews        = pd.read_sql("SELECT * FROM score",           engine)
-2
+
 growth = growth.rename(columns={"average": "average_order_value",
                                  "round":   "revenue_per_month"})
 
