@@ -93,3 +93,32 @@ Strong acquisition, low retention, solid delivery, healthy satisfaction. The pla
 | `analysis.sql` | Full query file with commentary |
 | `analysis.py` | Visualization scripts |
 | `images/` | Charts used in this README |
+
+
+
+
+
+
+
+## How to Reproduce
+
+1. Download the dataset from [Kaggle](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)
+2. Run `schema.sql` to create the tables
+3. Load the CSVs — two options:
+
+   **Option A — pgAdmin:** right click each table → Import/Export Data → select the CSV, delimiter `,`, enable header. If encoding error, set encoding to `LATIN1`
+
+   **Option B — psql terminal:** run the following commands, replacing the path with where you saved the CSVs:
+```sql
+   \copy customers FROM 'your/path/olist_customers_dataset.csv' DELIMITER ',' CSV HEADER;
+   \copy geolocation FROM 'your/path/olist_geolocation_dataset.csv' DELIMITER ',' CSV HEADER;
+   \copy order_items FROM 'your/path/olist_order_items_dataset.csv' DELIMITER ',' CSV HEADER;
+   \copy order_payments FROM 'your/path/olist_order_payments_dataset.csv' DELIMITER ',' CSV HEADER;
+   \copy reviews FROM 'your/path/olist_order_reviews_dataset.csv' DELIMITER ',' CSV HEADER ENCODING 'LATIN1';
+   \copy orders FROM 'your/path/olist_orders_dataset.csv' DELIMITER ',' CSV HEADER;
+   \copy products FROM 'your/path/olist_products_dataset.csv' DELIMITER ',' CSV HEADER;
+   \copy product_category_translation FROM 'your/path/product_category_name_translation.csv' DELIMITER ',' CSV HEADER;
+   \copy sellers FROM 'your/path/olist_sellers_dataset.csv' DELIMITER ',' CSV HEADER;
+```
+
+4. Run `analysis.sql`
