@@ -90,9 +90,10 @@ Strong acquisition, low retention, solid delivery, healthy satisfaction. The pla
 
 | File | Description |
 |------|-------------|
-| `analysis.sql` | Full query file with commentary |
-| `analysis.py` | Visualization scripts |
-| `images/` | Charts used in this README |
+| `data_quality.sql` | Check nulls and inconsistencies |
+| `analysis.sql` | Full analysis query |
+| `visualization_script.py` | Visualization scripts |
+| `plots/` | Charts used in this README |
 
 
 
