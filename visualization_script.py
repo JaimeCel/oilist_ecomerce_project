@@ -7,14 +7,14 @@ import seaborn as sns
 import matplotlib.dates as mdates
 import matplotlib.cm as cm
 
-# ── Global style ────────────────────────────────────────────────────────────
+# Global style
 sns.set_theme(style="ticks", palette="muted", font_scale=1.1)
 SAVE_DPI = 150
 LINE_COLOR = "steelblue"
 
 load_dotenv()
 
-# ── Database connection ──────────────────────────────────────────────────────
+# Database connection
 engine = create_engine(
     f"postgresql://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}"
     f"@localhost:5432/{os.getenv('DB_NAME')}"
@@ -27,18 +27,18 @@ customer_repeat= pd.read_sql("SELECT * FROM customer_repeat", engine)
 product_orders = pd.read_sql("SELECT * FROM product_orders",  engine)
 product_revenue= pd.read_sql("SELECT * FROM product_revenue", engine)
 reviews        = pd.read_sql("SELECT * FROM score",           engine)
-
+2
 growth = growth.rename(columns={"average": "average_order_value",
                                  "round":   "revenue_per_month"})
 
-# ── Helper: shared x-axis date formatting ────────────────────────────────────
+# Shared x-axis date formatting
 def format_month_axis(ax):
     ax.xaxis.set_major_formatter(mdates.DateFormatter("%b %Y"))
     ax.xaxis.set_major_locator(mdates.MonthLocator())
     plt.xticks(rotation=45, ha="right")
 
 
-# ── 1. Revenue vs Month ──────────────────────────────────────────────────────
+# Revenue vs Month 
 fig, ax = plt.subplots(figsize=(10, 6))
 sns.lineplot(data=growth[:-2], x="month", y="revenue_per_month",
              ax=ax, color=LINE_COLOR, linewidth=2.5)
@@ -55,7 +55,7 @@ plt.tight_layout()
 plt.savefig("growth_vs_month.png", dpi=SAVE_DPI)
 plt.close()
 
-# ── 2. Orders vs Month ───────────────────────────────────────────────────────
+# Orders vs Month 
 fig, ax = plt.subplots(figsize=(10, 6))
 sns.lineplot(data=growth[:-2], x="month", y="num_orders",
              ax=ax, color=LINE_COLOR, linewidth=2.5)
@@ -71,7 +71,7 @@ plt.tight_layout()
 plt.savefig("orders_vs_month.png", dpi=SAVE_DPI)
 plt.close()
 
-# ── 3. Average Order Value vs Month ─────────────────────────────────────────
+# Average Order Value vs Month 
 fig, ax = plt.subplots(figsize=(10, 6))
 sns.lineplot(data=growth[5:-2], x="month", y="average_order_value",
              ax=ax, color=LINE_COLOR, linewidth=2.5)
@@ -87,7 +87,7 @@ plt.tight_layout()
 plt.savefig("average_order_value_vs_month.png", dpi=SAVE_DPI)
 plt.close()
 
-# ── 4. Delivery Performance by State ────────────────────────────────────────
+# Delivery Performance by State 
 deliveries_sorted = deliveries.sort_values("avg_delivery_days", ascending=True)
 
 norm   = plt.Normalize(deliveries_sorted["late_delivery_percent"].min(),
@@ -108,7 +108,7 @@ plt.tight_layout()
 plt.savefig("late_deliveries_vs_state.png", dpi=SAVE_DPI)
 plt.close()
 
-# ── 5. New Customers per Month ───────────────────────────────────────────────
+# New Customers per Month
 new_customers["cohort_month"] = pd.to_datetime(new_customers["cohort_month"], unit="ms")
 plot_nc = new_customers.iloc[5:-2]
 
@@ -128,7 +128,7 @@ plt.tight_layout()
 plt.savefig("new_customers_vs_month.png", dpi=SAVE_DPI)
 plt.close()
 
-# ── 6. Revenue % by Product Category ────────────────────────────────────────
+# Revenue % by Product Category ────────────────────────────────────────
 product_revenue_sorted = product_revenue.sort_values("revenue_percent", ascending=False)
 
 # Truncate long category names for readability
