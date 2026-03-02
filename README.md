@@ -106,9 +106,9 @@ Strong acquisition, low retention, solid delivery, healthy satisfaction. The pla
 2. Run `schema.sql` to create the tables
 3. Load the CSVs — two options:
 
-   **Option A — pgAdmin:** right click each table → Import/Export Data → select the CSV, delimiter `,`, enable header. If encoding error, set encoding to `LATIN1`
+   **Option A — pgAdmin:** 
 
-   **Option B — psql terminal:** run the following commands, replacing the path with where you saved the CSVs:
+   **Option B — psql terminal:** run the following commands, replacing the path with your CSV:
 ```sql
    \copy customers FROM 'your/path/olist_customers_dataset.csv' DELIMITER ',' CSV HEADER;
    \copy geolocation FROM 'your/path/olist_geolocation_dataset.csv' DELIMITER ',' CSV HEADER;
@@ -121,4 +121,7 @@ Strong acquisition, low retention, solid delivery, healthy satisfaction. The pla
    \copy sellers FROM 'your/path/olist_sellers_dataset.csv' DELIMITER ',' CSV HEADER;
 ```
 
+3. Run `data_quality.sql` to check for nulls and inconsistencies
 4. Run `analysis.sql`
+5. Update the `.env` file with your database credentials (see `.env`)
+6. Run `visualization.py` to generate the plots
