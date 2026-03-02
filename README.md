@@ -61,7 +61,7 @@ One nuance worth mentioning: slow states don't always have the worst late-delive
 
 The top 10 categories account for 63% of total revenue. There's real concentration there — performance in those categories has an outsized effect on overall results. That said, the platform isn't dependent on any single category, and the remaining 37% is spread across a wide range of smaller segments.
 
-![Revenue by product category](plots/revenue_percent_vs_product_category_name.png)
+![Revenue by product category](plots/revenue_percent_vs_product_category.png)
 
 ---
 
