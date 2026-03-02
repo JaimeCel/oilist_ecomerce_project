@@ -28,7 +28,7 @@ The platform grew strongly through 2017 and stabilized in 2018. Digging into wha
 
 The last two months of 2018 show lower numbers, but that's likely incomplete data rather than an actual slowdown.
 
-![Revenue over time](growth_vs_month.png)
+![Revenue over time](plots/growth_vs_month.png)
 ![Average price per order](average_price_per_order_vs_month.png)
 
 ---
