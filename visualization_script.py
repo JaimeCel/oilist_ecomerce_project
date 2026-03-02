@@ -128,7 +128,7 @@ plt.tight_layout()
 plt.savefig("new_customers_vs_month.png", dpi=SAVE_DPI)
 plt.close()
 
-# Revenue % by Product Category ────────────────────────────────────────
+# Revenue % by Product Category 
 product_revenue_sorted = product_revenue.sort_values("revenue_percent", ascending=False)
 
 # Truncate long category names for readability
