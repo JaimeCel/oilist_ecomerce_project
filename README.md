@@ -29,7 +29,7 @@ The platform grew strongly through 2017 and stabilized in 2018. Digging into wha
 The last two months of 2018 show lower numbers, but that's likely incomplete data rather than an actual slowdown.
 
 ![Revenue over time](plots/growth_vs_month.png)
-![Average price per order](average_price_per_order_vs_month.png)
+![Average price per order](plots/average_price_per_order_vs_month.png)
 
 ---
 
@@ -37,7 +37,7 @@ The last two months of 2018 show lower numbers, but that's likely incomplete dat
 
 Only 3% of customers ever place a second order. The business runs on acquisition — it needs a constant flow of new customers to sustain revenue.
 
-![New customers per month](new_customers_vs_month.png)
+![New customers per month](plots/new_customers_vs_month.png)
 
 What's worth noting is that repeat customers generate around 6% of total revenue despite being just 3% of the base. They're more valuable per head, which means retention is a real opportunity even if small gains are hard to achieve.
 
@@ -53,7 +53,7 @@ The regional picture is more uneven. Fastest states average around 9 days; slowe
 
 One nuance worth mentioning: slow states don't always have the worst late-delivery rates. Delivery estimates seem to be calibrated to local conditions, so longer transit times don't automatically mean more missed deadlines. The reliability issues tend to show up more in mid-range states where estimates and reality don't quite align.
 
-![Delivery performance by state](late_deliveries_vs_state.png)
+![Delivery performance by state](plots/late_deliveries_vs_state.png)
 
 ---
 
@@ -61,7 +61,7 @@ One nuance worth mentioning: slow states don't always have the worst late-delive
 
 The top 10 categories account for 63% of total revenue. There's real concentration there — performance in those categories has an outsized effect on overall results. That said, the platform isn't dependent on any single category, and the remaining 37% is spread across a wide range of smaller segments.
 
-![Revenue by product category](revenue_percent_vs_product_category_name.png)
+![Revenue by product category](plots/revenue_percent_vs_product_category_name.png)
 
 ---
 
