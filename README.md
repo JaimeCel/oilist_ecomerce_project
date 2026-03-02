@@ -82,7 +82,7 @@ Strong acquisition, low retention, solid delivery, healthy satisfaction. The pla
 ## Tools
 
 - **SQL** (PostgreSQL)
-- **Python** (pandas, matplotlib/seaborn)
+- **Python** (pandas, matplotlib/seaborn,SQLAlchemy)
 
 ---
 
